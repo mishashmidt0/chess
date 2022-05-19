@@ -10,7 +10,7 @@ interface CellProps {
 export const CellComponent = React.memo(({cell}: CellProps) => {
     return (
         <div className={`cell ${cell.color}`}>
-
+            {cell.figure?.logo && <img className={'figure'} src={cell.figure.logo} alt={cell.figure.name}/>}
         </div>
     )
 })

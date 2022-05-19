@@ -33,3 +33,9 @@
 .white {
     background-color: #f2cb77;
 }
+
+.figure {
+    width: 55px;
+    height: 55px;
+    position: relative;
+}
