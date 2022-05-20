@@ -15,12 +15,28 @@ export class Board {
             const row: Cell[] = [];
             for (let j = 0; j < 8; j++) {
 
-                (i + j) % 2 !== 0 ? row.push(new Cell(this, j, i, Colors.BLACK, null)) // Black cell
-                    : row.push(new Cell(this, j, i, Colors.WHITE, null)) // White cell
+                (i + j) % 2 !== 0 ? row.push(new Cell(this, j, i, Colors.BLACK, null))
+                    : row.push(new Cell(this, j, i, Colors.WHITE, null))
 
             }
             this.cells.push(row)
         }
+    }
+
+    public highlightCells(selectedCell: Cell | null) {
+        for (let i = 0; i < this.cells.length; i++) {
+            const row = this.cells[i]
+            for (let j = 0; j < this.cells.length; j++) {
+                const target = row[j]
+                target.available = !!selectedCell?.figure?.canMove(target)
+            }
+        }
+    }
+
+    public getCopyBoard(): Board {
+        const newBoard = new Board();
+        newBoard.cells = this.cells
+        return newBoard
     }
 
     public getCell(x: number, y: number) {

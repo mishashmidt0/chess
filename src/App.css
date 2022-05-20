@@ -27,7 +27,7 @@
 }
 
 .black {
-    background-color: deepskyblue;
+    background-color: #3da2c7;
 }
 
 .white {
@@ -38,4 +38,15 @@
     width: 55px;
     height: 55px;
     position: relative;
+}
+
+.selected {
+    background: rgba(213, 59, 59, 0.82);
+}
+
+.available {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: #4acb12;
 }
